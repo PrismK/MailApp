@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:padding="5dp">
+
+    <com.mailapp.view.MyImageView
+        android:id="@+id/miv_image"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:background="#dddddd"/>
+
+    <TextView
+        android:id="@+id/tv_news_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/miv_image"
+        android:singleLine="true"
+        android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_news_title"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/miv_image"
+        android:maxLines="2"
+        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        android:textColor="#5b5353"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/miv_image"
+        android:layout_alignParentRight="true"
+        android:text="XXXX"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"/>
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="邮箱" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#707070"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_getmail"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="收件箱"
+            android:background="@color/blue"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_sendmail"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="发件箱"
+            android:background="@color/blue"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/btn_notsend"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="草稿箱"
+            android:background="@color/blue"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

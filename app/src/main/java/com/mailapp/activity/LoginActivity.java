@@ -1,10 +1,15 @@
 package com.mailapp.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,19 +29,32 @@ public class LoginActivity extends Activity {
     private Button btn_login;
     private SharedPreferences login_sp;
     private UserDBManager mUserDBManager;
-    private ProgressDialog dialog;
-    private String address;
     private String pwd;
+    private String name;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        initView();
+        requestPermission();
         initSP();
-        initClickListener();
-        initUserDataManager();
+        if (!name.isEmpty() && !pwd.isEmpty()) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        } else {
+            initView();
+            initClickListener();
+            initUserDataManager();
+        }
+    }
+
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
     }
 
     private void initUserDataManager() {
@@ -53,10 +71,8 @@ public class LoginActivity extends Activity {
 
     private void initSP() {
         login_sp = getSharedPreferences("userInfo", 0);
-        String name = login_sp.getString("USER_NAME", "");
-        String pwd = login_sp.getString("PASSWORD", "");
-        edt_username.setText(name);
-        edt_pw.setText(pwd);
+        name = login_sp.getString("USER_NAME", "");
+        pwd = login_sp.getString("PASSWORD", "");
     }
 
     private void initView() {

@@ -20,6 +20,15 @@
             android:background="#707070"
             android:layout_alignParentBottom="true"/>
 
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="注销登录"
+            android:layout_marginRight="15dp"/>
+
     </RelativeLayout>
 
     <LinearLayout
@@ -46,10 +55,10 @@
             android:layout_marginTop="20dp" />
 
         <Button
-            android:id="@+id/btn_notsend"
+            android:id="@+id/btn_writemail"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:text="草稿箱"
+            android:text="写邮件"
             android:background="@color/blue"
             android:textColor="#ffffff"
             android:layout_marginTop="20dp" />

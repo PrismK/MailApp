@@ -20,12 +20,23 @@
             android:background="#707070"
             android:layout_alignParentBottom="true"/>
 
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="注销登录"
+            android:layout_marginRight="15dp"/>
+
     </RelativeLayout>
 
     <ListView
         android:id="@+id/lv_news"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never">
 
     </ListView>
 
